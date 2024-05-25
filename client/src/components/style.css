@@ -1,0 +1,109 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Container styles */
+  .todo-container {
+    max-width: 600px;
+    margin: 50px auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Header styles */
+  .header {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  /* Task styles */
+  .task {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 10px;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  .task span {
+    flex: 1;
+  }
+  
+  .task button {
+    margin-left: 10px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .task button:nth-child(2) {
+    background: #4caf50;
+    color: #fff;
+  }
+  
+  .task button:nth-child(3) {
+    background: #f44336;
+    color: #fff;
+  }
+  
+  .task button:nth-child(4) {
+    background: #008cba;
+    color: #fff;
+  }
+  
+  /* Add Task form styles */
+  .add-task {
+    margin-bottom: 20px;
+  }
+  
+  .add-task h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .add-task form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .add-task form div {
+    margin-bottom: 10px;
+  }
+  
+  .add-task form label {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .add-task form input,
+  .add-task form select {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  .add-task form button {
+    padding: 10px;
+    background: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .add-task form button:hover {
+    background: #0056b3;
+  }
+  
