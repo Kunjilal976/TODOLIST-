@@ -5,7 +5,7 @@ require('dotenv').config();
 const taskRoutes = require('./route/taskRoute');
 
 const app = express();
-const port = 5173;
+const port = 3000;
 
 app.use(express.json());
 
