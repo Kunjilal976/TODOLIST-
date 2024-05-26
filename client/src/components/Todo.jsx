@@ -9,7 +9,7 @@ function Todo() {
   useEffect(() => {
     const fetchTasks = async () => {
       try {
-        const response = await axios.get('http://localhost:5173/tasks');
+        const response = await axios.get('http://localhost:3000/tasks');
         console.log('Fetched tasks:', response.data); // Log fetched tasks
         if (Array.isArray(response.data)) {
           setTasks(response.data);
@@ -26,7 +26,7 @@ function Todo() {
 
   const addTask = async (task) => {
     try {
-      const response = await axios.post('http://localhost:5173/tasks', task);
+      const response = await axios.post('http://localhost:3000/tasks', task);
       console.log('Added task:', response.data); // Log added task
       setTasks(prevTasks => [...prevTasks, response.data]);
     } catch (error) {
@@ -38,7 +38,7 @@ function Todo() {
     try {
       const taskToUpdate = tasks.find(task => task._id === id);
       const updatedTask = { ...taskToUpdate, completed: !taskToUpdate.completed };
-      const response = await axios.put(`http://localhost:5173/tasks/${id}`, updatedTask);
+      const response = await axios.put(`http://localhost:3000/tasks/${id}`, updatedTask);
       console.log('Completed task:', response.data); // Log completed task
       setTasks(tasks.map(task => (task._id === id ? response.data : task)));
     } catch (error) {
@@ -48,7 +48,7 @@ function Todo() {
 
   const removeTask = async (id) => {
     try {
-      await axios.delete(`http://localhost:5173/tasks/${id}`);
+      await axios.delete(`http://localhost:3000/tasks/${id}`);
       console.log('Deleted task ID:', id); // Log deleted task ID
       setTasks(tasks.filter(task => task._id !== id));
     } catch (error) {
@@ -58,7 +58,7 @@ function Todo() {
 
   const editTask = async (id, updatedTask) => {
     try {
-      const response = await axios.put(`http://localhost:5173/tasks/${id}`, updatedTask);
+      const response = await axios.put(`http://localhost:3000/tasks/${id}`, updatedTask);
       console.log('Edited task:', response.data); // Log edited task
       setTasks(tasks.map(task => (task._id === id ? response.data : task)));
     } catch (error) {

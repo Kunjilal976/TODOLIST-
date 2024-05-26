@@ -48,11 +48,11 @@ const deleteTaskById = async (req, res) => {
 
 const updateTaskById = async (req, res) => {
   const id = req.params.id;
-  const { title, description, dueDate, completed } = req.body;
+  const { title, description, dueDate, status } = req.body;
   try {
     const task = await TaskModel.findByIdAndUpdate(
       id,
-      { title, description, dueDate, completed },
+      { title, description, dueDate, status },
       { new: true, runValidators: true }
     );
     if (!task) {

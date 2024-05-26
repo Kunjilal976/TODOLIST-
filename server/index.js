@@ -17,7 +17,7 @@ mongoose.connect('mongodb://localhost:27017/todos')
     console.log(err);
   });
 
-app.use('/', taskRoutes);
+app.use('/tasks', taskRoutes);
 
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);

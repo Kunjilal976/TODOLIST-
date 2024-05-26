@@ -1,4 +1,3 @@
-// Task.js
 import React, { useState } from 'react';
 import './style.css';
 
@@ -15,7 +14,7 @@ function Task({ task, completeTask, removeTask, editTask }) {
   };
 
   return (
-    <div className="task" style={{ textDecoration: task.completed ? "line-through" : "" }}>
+    <div className="task" style={{ textDecoration: task.status === 'completed' ? 'line-through' : '' }}>
       {isEditing ? (
         <>
           <input
@@ -34,10 +33,12 @@ function Task({ task, completeTask, removeTask, editTask }) {
           <p>{task.description}</p>
         </>
       )}
-      <button style={{ background: "red" }} onClick={() => removeTask(task._id)}>x</button>
-      <button onClick={() => completeTask(task._id)}>Complete</button>
+      <button style={{ background: 'red' }} onClick={() => removeTask(task._id)}>x</button>
+      <button onClick={() => completeTask(task._id)}>
+        {task.status === 'completed' ? 'Uncomplete' : 'Complete'}
+      </button>
       <button onClick={handleEdit}>
-        {isEditing ? "Save" : "Edit"}
+        {isEditing ? 'Save' : 'Edit'}
       </button>
     </div>
   );

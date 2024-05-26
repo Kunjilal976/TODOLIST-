@@ -11,8 +11,9 @@ function CreateTask({ onTaskAdded }) {
     e.preventDefault();
     const newTask = { title, description, status, dueDate };
 
+
     try {
-      const response = await axios.post('http://localhost:5173/tasks', newTask, {
+      const response = await axios.post('http://localhost:3000/tasks', newTask, {
         headers: { 'Content-Type': 'application/json' }
       });
       onTaskAdded(response.data);  // Call the parent callback to add the task to the list
